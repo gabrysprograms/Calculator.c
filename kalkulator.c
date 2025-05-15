@@ -19,11 +19,9 @@ double number()
 int main()
 {
 
-    double result = 0; // wynik dzialan
-    char action;       // zmienna przyjmujaca funkcje programu
-    int n = 1;         // zmienna do zamkniecia programu
-
-    // interfejs uzytkownika
+    double result = 0;
+    char action; 
+    int n = 1;
 
     while (n == 1)
     {
@@ -31,12 +29,12 @@ int main()
         printf("----------------\n");
         printf("|      %.6lf|\n", result);
         printf("----------------\n");
-        printf("+,p,P ) Plus\n");
-        printf("-,m,M ) Minus\n");
-        printf("*,r,R ) Razy\n");
-        printf("/,d,D ) Dziel\n");
-        printf("=,u,U ) Ustaw\n");
-        printf(".,k,K ) Koniec\n");
+        printf("+,p,P ) Add\n");
+        printf("-,m,M ) Subtract\n");
+        printf("*,r,R ) Multiply\n");
+        printf("/,d,D ) Divide\n");
+        printf("=,u,U ) Set Value\n");
+        printf(".,k,K ) Exit\n");
         printf("?");
         action = tolower(getchar());
 
@@ -64,14 +62,13 @@ int main()
             break;
         case '.':
         case 'k':
-            printf("Koncze Dzialanie Programu.");
+            printf("Exiting the program.");
             n = 0;
             break;
         default:
-            printf("Zly Wybor\n");
+            printf("Invalid Choice\n");
             break;
         }
-        // wyczyszczenie bufora w zmiennej Action z pozostalych liter
 
         while ((action = getchar()) != '\n' && action != EOF)
         {
