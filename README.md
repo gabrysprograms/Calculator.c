@@ -33,3 +33,12 @@ How It Works
 - The user selects an action by typing a character (e.g., `+`, `m`, `*`, `/`)
 - The calculator performs the action on the current result
 - The user can update, view or reset the result at any tim
+
+## ⚠️ Known Limitations
+
+- **Division by zero is not fully handled** – the program allows it and may return `inf` or cause undefined behavior depending on the compiler.
+- **Input buffer issue on restart** – when the user exits the program by pressing a key (e.g., `k`) followed by `Enter`, and then runs the program again, the leftover newline (`\n`) is read immediately. As a result:
+  - The program prints the interface once,
+  - Immediately reads the `Enter` as input,
+  - Prints the interface a second time before accepting a valid action.
+- **No persistent memory** – the calculator only keeps the current result and does not support history or memory features.
